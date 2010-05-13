@@ -27,4 +27,3 @@ end
 #----------------------------------------------------------------
 
 after "deploy:symlink", "db:mysql:symlink"
-after "deploy:symlink", "wordpress:create_symlinks"
