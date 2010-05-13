@@ -1,10 +1,10 @@
 class KeywordsController < HomeController
-  # active_scaffold :keywords do |config|
-  #   config.columns = [:name, :previous_rank, :current_rank, :change_in_rank, :last_ranked]           
-  #   config.list.per_page = 50
-  #   config.columns[:current_rank].css_class = 'align-center'
-  #   config.columns[:previous_rank].css_class = 'align-center'
-  # end   
+  active_scaffold :keywords do |config|
+    config.columns = [:name, :previous_rank, :current_rank, :change_in_rank, :last_ranked]           
+    config.list.per_page = 50
+    config.columns[:current_rank].css_class = 'align-center'
+    config.columns[:previous_rank].css_class = 'align-center'
+  end   
   
   def initialize_page
     super

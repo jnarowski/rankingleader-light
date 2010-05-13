@@ -1,7 +1,7 @@
 class LinkTypesController < HomeController
-  # active_scaffold :link_types do |config|
-  #   config.columns = [:name, :permalink]          
-  # end
+  active_scaffold :link_types do |config|
+    config.columns = [:name, :permalink]          
+  end
   
   # only authenticated users are authorized to create records
   def create_authorized?

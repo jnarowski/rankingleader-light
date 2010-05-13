@@ -1,6 +1,6 @@
 class RolesController < HomeController
-  # active_scaffold :roles do |config|          
-  # end       
+  active_scaffold :roles do |config|          
+  end       
   
   def list   
     if @current_user.superadmin?  
