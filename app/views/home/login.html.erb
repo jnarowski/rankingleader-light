@@ -1,0 +1,21 @@
+<% form_tag :action => 'login' do %>
+  <%= error_messages_for :user %>
+  <table cellspacing="5">
+    <tr>
+      <td style="text-align: right;">Login ID:</td>
+      <td><%= text_field :user, :username, :size => '25'  %></td>
+    </tr>
+    <tr>
+      <td style="text-align: right;">Password:</td>
+      <td><%= password_field :user, :password, :size => '25' %></td>
+    </tr>
+    </tr>
+      <td></td>
+      <td align="center">
+        <br />
+  			<%= submit_tag 'Login' %>
+  		</td>
+  	</tr>
+  </table> 
+<% end %>
+</div>

@@ -1,0 +1,16 @@
+<h1>Report generated for <strong><%= @project.url %></strong></h1>
+
+<table cellspacing="5">
+  <tr>
+    <td><strong>Report Name:</strong></td>
+    <td><%= @report.name %></td>
+  </tr>
+  <tr>
+    <td><strong>Download:</strong></td>
+    <td><%= link_to('Report', "#{SITE_URL}/#{@report.url_for_filename}") %></td>
+  </tr>
+  <tr>
+    <td><strong>Project:</strong></td>
+    <td><%= link_to(@project.url, @project.url) %></td>
+  </tr>
+</table>

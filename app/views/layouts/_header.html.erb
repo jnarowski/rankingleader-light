@@ -1,0 +1,44 @@
+<div id="top-menu" class="top-menu">
+  <div class="main-wrapper">
+    <div class="float-right" style="font-weight: bold; padding-top: 10px;">
+      <% if is_logged_in? %>
+        <%= @current_user.username %>
+        <a href="/login"> | Logout</a>
+      <% end %>   
+    </div>
+    <div style="padding-top: 10px; margin-left: 20px;">
+      <% if is_admin? %>
+        <a href="/users">Users</a> | 
+        <a href="/link_types">Link Types</a> | 
+        <a href="/roles">Roles</a> | 
+        <a href="/writers">Writers</a> | 
+      <% end %>
+      <% if is_logged_in? %> 
+        <a href="/projects">Projects</a>
+      <% end %>    
+    </div>
+    <%= float_clear %>  
+  </div>
+</div>  
+<div style="background: #2f72aa; margin-bottom: 15px">
+  <div class="main-wrapper">  
+    <% if is_logged_in? %>    
+    <div class="float-right" style="margin-top: 17px; color: #fff"><form>Project <%= project_select %></form></div>    
+    <h1 style="color: #fff; margin: 0px; padding: 15px; "><%= @current_project ? @current_project.url : 'Select Project' %></h1> 
+      <div class="top-sub-menu" style="margin-left: 20px;">
+        <ul>
+          <%= tab('Dashboard', "/projects/show/#{@current_project.id}", "DASHBOARD") if @current_project %> 
+          <% unless @current_user.writer? %>
+            <%= tab('Keywords', '/keywords', "KEYWORDS") %> 
+            <%= tab('Links', '/links', "LINKS") %>
+            <%= tab('Reports', '/reports', "REPORTS") %>   
+          <% end %>
+          <%= tab('Articles', '/articles', "ARTICLES") %>          
+        </ul>      
+      </div>
+    <% else %>
+      <h1 style="color: #fff; margin: 0px; padding: 15px; ">Please Login</h1>
+    <% end %>        
+  </div>  
+  <%= float_clear %>   
+</div>

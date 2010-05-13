@@ -1,0 +1,19 @@
+<h2 style="margin: 0px;">Bulk Link Import</h2>     
+<p style="margin-top: 0px;">Enter one URL per line.</p>
+<div class="example-box">
+  <div class="float-left" style="margin-right: 50px;">
+    <strong>Example:</strong>
+    www.domain.com,blog<br />
+    www.otherdomain.com,website<br />
+    www.thirddomain.com,forum
+  </div>
+  <div class="float-left">
+    <strong>Available Categories:</strong>
+    <%= available_link_types %>
+  </div>
+  <%= float_clear %>
+</div>
+<form method="post" action="/links/bulk_create">
+  <textarea name="bulk_links" rows="20" cols="100"></textarea>  
+  <div style="margin-top: 10px;"><%= submit_tag 'Create' %> <a href="/links" class="bad">Cancel</a></div>
+</form>              

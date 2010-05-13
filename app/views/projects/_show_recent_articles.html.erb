@@ -1,0 +1,15 @@
+<h3>Recent Articles</h3>
+<table cellspacing="1" width="100%" class="white-table">
+  <tr>
+    <th width="60%">Name</th>
+    <th>Status</th>
+    <th>Date Added</th>
+  </tr>
+  <% @recent_articles.each do |a| %>
+  <tr>
+    <td><%= link_to(a.title, url_for_file_column(a, 'filename')) %></td>
+    <td><%= a.status %></td>
+    <td><%= format_date(a.created_at) %></td>
+  </tr>
+  <% end %>
+</table>

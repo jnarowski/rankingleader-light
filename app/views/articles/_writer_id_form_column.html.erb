@@ -1,0 +1,4 @@
+<% unless @current_user.writer? %>
+  <dt><label>Writer</label></dt>
+  <dd><%= select :record, :writer_id, Writer.find(:all, :order => 'name').collect {|w| [ w.name, w.id ] }, :prompt => 'Select Writer' %></dd>
+<% end %>

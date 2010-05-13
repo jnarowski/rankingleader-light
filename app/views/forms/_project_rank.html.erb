@@ -1,0 +1,26 @@
+<h3>New Project Ranks</h3>
+<% remote_form_for(@project_rank) do |f| %>
+  <table cellspacing="1" width="100%" class="white-table">
+    <% if !@project_rank.errors.empty? %>
+    <tr>
+      <td colspan="2"><%= f.error_messages %></td>
+    </tr>    
+    <% end %>
+    <tr>
+      <td class="align-right">Google Links</th>
+      <td><%= f.text_field :google_links %></td>
+    </tr>
+    <tr>
+      <td class="align-right">Yahoo Links</th>
+      <td><%= f.text_field :yahoo_links %></td>
+    </tr>
+    <tr>
+      <td class="align-right">Google Page Rank</th>
+      <td><%= f.select :page_rank, collect_for_page_rank %></td>
+    </tr>
+    <tr>
+      <td class="align-right">&nbsp;</th>
+      <td><%= f.submit 'Create' %> <%= link_to_remote 'Cancel', :url => { :action => 'load_project_ranks', :controller => 'project_ranks' }, :html => { :class => 'cancel' } %></td>
+    </tr>
+  </table>
+<% end %>

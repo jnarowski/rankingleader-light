@@ -1,0 +1,4 @@
+<h2>Article <%= @article.title %> has been published</h2>
+<p>This is an email notifying you that an article has been published on your website.
+<% unless @article.published_url.blank? %>This article is available to view online at <%= link_to(@article.published_url, @article.published_url) %>.<% end %>
+</p>

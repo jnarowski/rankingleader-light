@@ -1,0 +1,22 @@
+<h1>New Article Uploaded for <strong><%= @project.url %></strong></h1>
+
+<table cellspacing="5">
+  <tr>
+    <td><strong>Title:</strong></td>
+    <td><%= @article.title %></td>
+  </tr>
+  <tr>
+    <td><strong>Download:</strong></td>
+    <td><%= "#{SITE_URL}#{url_for_file_column(@article, 'filename')}" %></td>
+  </tr>
+  <tr>
+    <td><strong>Project:</strong></td>
+    <td><%= link_to(@project.url, @project.url) %></td>
+  </tr>
+  <% if @writer %>
+  <tr>
+    <td><strong>Writer:</strong></td>
+    <td><%= @writer.name %></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,4 @@
+<% unless @current_user.writer? %>
+  <dt><label>Rating</label></dt>
+  <dd><%= text_field :record, :rating, :size => 10 %><p style="font-size: 10px; margin-bottom: 5px;">1-10 Rating</p></dd>
+<% end %>

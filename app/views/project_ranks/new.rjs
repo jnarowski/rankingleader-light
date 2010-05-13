@@ -1,0 +1,1 @@
+page.replace_html 'ranking-metrics-box', :partial => 'forms/project_rank'

@@ -1,0 +1,16 @@
+<table cellspacing="0" class="report-table" style="margin-top: 20px;">   
+  <tr>
+    <th width="15%">Date Created</th>
+    <th>Page Rank</th>
+    <th>Link Location</th>   
+    <th>Points To</th>
+  </tr>
+  <% @links.each do |link| %> 
+  <tr>
+    <td class="align-center"><%= format_date link.created_at %></td>
+    <td class="align-center"><%= page_rank_image(link.page_rank) %></td>
+    <td><%= link.url %></td>
+    <td><%= link.links_to %></td>  
+  </tr>
+  <% end %>               
+</table>

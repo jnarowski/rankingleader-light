@@ -1,0 +1,8 @@
+<div id="links-active-scaffold">
+  <h2 style="margin: 0px;">Bulk Keyword Import</h2>     
+  <p style="margin-top: 0px;">Enter one keyword per line</p>
+  <form method="post" action="/keywords/bulk_create">
+    <textarea name="bulk_keywords" rows="20" cols="100"></textarea>  
+    <div style="margin-top: 10px;"><%= submit_tag 'Create' %> <a href="/keywords" class="bad">Cancel</a></div>
+  </form>              
+</div>

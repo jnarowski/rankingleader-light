@@ -1,0 +1,3 @@
+<% @record.project_id = @current_project.id if @record.new_record? %>
+<dt><label>Project</label></dt>
+<dd><%= select :record, :project_id, Project.find_with_permission(@current_user.id).collect {|p| [ p.url, p.id ] } %></dd>

@@ -1,0 +1,2 @@
+page.replace_html 'report-description', report_type_description(params[:report_type])
+page.visual_effect :highlight, 'report-description'

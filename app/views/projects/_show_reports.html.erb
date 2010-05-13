@@ -1,0 +1,28 @@
+<h3>Generate Reports</h3>
+<% form_tag(:action => 'generate_report', :controller => 'projects') do %>
+<table cellspacing="1" width="100%" class="white-table">
+  <tr>
+    <td><strong>Type</strong></td>
+    <td>
+      <select name="report_type" onchange="<%= remote_function(:with => "Form.serialize(this.form)", :url => {:action => 'update_report_description'}) %>">
+        <option value="Project">Project Overview</option>
+        <option value="Article">Article Report</option>
+        <option value="Keyword">Keyword Report</option>
+        <option value="Link">Link Report</option>
+      </select>
+      <p style="margin:0px; margin-top: 7px; font-size: 11px;" id="report-description"><%= report_type_description('Project') %></p>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Range</strong></td>
+    <td>
+      <div style="margin-bottom: 8px;">Start&nbsp;&nbsp;<%= calendar_date_select_tag "start_date" %></div>
+      <div>End&nbsp;&nbsp;&nbsp;&nbsp;<%= calendar_date_select_tag "end_date" %></div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><%= submit_tag 'Create' %></td>
+  </tr>
+</table>
+<% end %>

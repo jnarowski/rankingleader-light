@@ -1,0 +1,6 @@
+<% form_remote_tag :url => { :action => 'links_results' } do %>
+  Start <%= text_field_tag 'start_date' %>  
+  End <%= text_field_tag 'end_date' %>  
+  <%= submit_tag 'Submit' %> 
+<% end %>      
+<div id="results"></div>

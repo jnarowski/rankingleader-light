@@ -1,0 +1,2 @@
+<dt><label>Category</label></dt>
+<dd><%= select :record, :category_id, Category.find(:all, :conditions => ["project_id = ? ", @current_project.id], :order => 'name').collect {|c| [ c.name, c.id ] }, :include_blank => true %></dd>

@@ -1,0 +1,43 @@
+<div id="project-dashboard">
+  <h2 style="">Project Dashboard</h2>
+  <div style="margin-top: 10px; margin-bottom: 10px; width: 480px; float: left">
+    <h3 style="margin-top: 0px;">Overview</h3>
+    <%= @record.overview %>
+    <h3>Objectives</h3>
+    <%= @record.goals %>
+    <h3 style="margin-bottom: 0px;">Target Markets</h3>
+    <%= @record.target_markets %>
+    
+    <% unless @record.article_topics.blank? %>
+    <h3 style="margin-bottom: 0px;">Article Topics</h3>
+    <%= @record.article_topics %>
+    <% end %>
+  </div>
+  
+  <% unless @current_user.writer? %>
+    <div class="float-right">
+      <div class="blue-box">
+        <% if @current_user.can_modify? %><div class="float-right"><%= link_to_remote('Add New', :url => { :action => 'new', :controller => 'project_ranks' }) %></div><% end %>
+        <div id="ranking-metrics-box">
+          <%= render :partial => 'show_ranking_metrics' %>
+        </div>
+      </div>
+
+      <div class="blue-box">
+        <div id="report-box">
+          <%= render :partial => 'show_reports' %>
+        </div>
+      </div>
+      
+      <% if @recent_articles && @recent_articles.size > 0 %>
+      <div class="blue-box">
+        <%= render :partial => 'show_recent_articles' %>
+      </div>
+    <% end %>
+    </div>
+    <%= float_clear %>
+    <div style="margin-top: 10px;">
+      <%= render :active_scaffold => 'keywords', :constraints => { :project_id => @record.id } %>
+    </div>
+  <% end %>
+</div>

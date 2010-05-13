@@ -1,0 +1,23 @@
+<h3>Project Ranking Metrics</h3>
+<table cellspacing="1" width="100%" class="white-table">
+  <tr>
+    <th width="28%">&nbsp;</th>
+    <th width="36%"><%= format_date(@last_rank.created_at) if @last_rank %><br />Previous Results</th>
+    <th width="36%"><%= format_date(@current_rank.created_at) if @current_rank %><br />Most Recent</th>
+  </tr>
+  <tr>
+    <td class="align-right">Google Links</td>
+    <td><%= number_with_delimiter(@last_rank.google_links) if @last_rank %></td>
+    <td><%= number_with_delimiter(@current_rank.google_links) if @current_rank %></td>
+  </tr>
+  <tr>
+    <td class="align-right">Yahoo Links</td>
+    <td><%= number_with_delimiter(@last_rank.yahoo_links) if @last_rank %></td>
+    <td><%= number_with_delimiter(@current_rank.yahoo_links) if @current_rank %></td>
+  </tr>
+  <tr>
+    <td class="align-right">PageRank</td>
+    <td><%= page_rank_image(@last_rank.page_rank) if @last_rank %> <%= @last_rank.page_rank if @last_rank %></td>
+    <td><%= page_rank_image(@current_rank.page_rank) if @current_rank %> <%= @current_rank.page_rank if @current_rank %></td>
+  </tr>
+</table>

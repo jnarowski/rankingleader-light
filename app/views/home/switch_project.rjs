@@ -1,0 +1,1 @@
+page.redirect_to((params[:current_url].blank? || params[:current_url] && (params[:current_url].include?('projects') || params[:current_url].include?('home'))) ? "/projects/show/#{ session[:project_id] }" : params[:current_url])

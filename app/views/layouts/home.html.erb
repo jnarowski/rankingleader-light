@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title><%= @page_title %> | MetaSpring SEO Manager</title>
+  	<%= javascript_include_tag :defaults %>
+  	<%= calendar_date_select_includes "blue" %>
+  	<%= active_scaffold_includes %>  
+  	<%= stylesheet_link_tag 'main' %>
+  </head>
+  <body>          
+    <%= render :partial => 'layouts/header' %>
+    <div class="main-wrapper"> 
+      <table cellspacing="0">
+        <tr>
+          <td>             
+            <div class="content-wrapper">
+              <div id="header">  </div>
+              <%= float_clear %> 
+              <table cellspacing="0" width="1012">
+                <tr>
+                  <td class="sidebar"><%= render :partial => 'layouts/sidebar' %></td>
+                  <td class="main-content" style="padding-left: 20px; padding-right: 20px;">
+                    <% if flash[:message] %><div class="flash-message"><%= flash[:message] %></div><% end %> 
+                    <%= yield %>
+                  </td>
+                </tr>
+              </table>
+            </div> 
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body> 
+</html>
+
