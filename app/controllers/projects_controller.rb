@@ -1,11 +1,11 @@
 class ProjectsController < HomeController
-  active_scaffold :projects do |config|
-    config.list.columns = [:url]            
-    config.create.columns = [:url, :overview, :goals, :target_markets, :article_topics]     
-    config.update.columns = [:url, :overview, :goals, :target_markets, :article_topics]  
-    config.show.columns = [:url, :overview, :goals, :target_markets, :keywords]        
-    config.show.link.inline = false
-  end  
+  # active_scaffold :projects do |config|
+  #   config.list.columns = [:url]            
+  #   config.create.columns = [:url, :overview, :goals, :target_markets, :article_topics]     
+  #   config.update.columns = [:url, :overview, :goals, :target_markets, :article_topics]  
+  #   config.show.columns = [:url, :overview, :goals, :target_markets, :keywords]        
+  #   config.show.link.inline = false
+  # end  
   
   def list
     @page_title = 'Projects' 

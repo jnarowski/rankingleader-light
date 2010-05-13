@@ -1,9 +1,9 @@
 class ReportsController < HomeController
-  active_scaffold :reports do |config|
-    config.columns = [:created_at, :name, :project]           
-    config.list.per_page = 50
-    config.list.sorting = { :created_at => :desc }   
-  end
+  # active_scaffold :reports do |config|
+  #   config.columns = [:created_at, :name, :project]           
+  #   config.list.per_page = 50
+  #   config.list.sorting = { :created_at => :desc }   
+  # end
 
   def list    
     @page_title = 'Reports'

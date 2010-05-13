@@ -1,4 +1,4 @@
 class ProjectUsersController < HomeController
-  active_scaffold :project_users do |config|     
-  end       
+  # active_scaffold :project_users do |config|     
+  # end       
 end

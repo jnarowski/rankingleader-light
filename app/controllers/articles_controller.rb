@@ -1,13 +1,13 @@
 class ArticlesController < HomeController
-  active_scaffold :articles do |config|
-    config.list.columns = [:created_at, :title, :category_id, :author, :rating, :published]           
-    config.create.columns = [:title, :filename, :category_id, :project_id, :writer_id, :cost, :rating, :published, :published_url]  
-    config.update.columns = [:title, :filename, :category_id, :project_id, :writer_id, :cost, :rating, :published, :published_url]   
-    config.list.per_page = 50
-    config.list.sorting = { :created_at => :desc}
-    
-    config.columns[:category_id].css_class = 'align-left'
-  end
+  # active_scaffold :articles do |config|
+  #   config.list.columns = [:created_at, :title, :category_id, :author, :rating, :published]           
+  #   config.create.columns = [:title, :filename, :category_id, :project_id, :writer_id, :cost, :rating, :published, :published_url]  
+  #   config.update.columns = [:title, :filename, :category_id, :project_id, :writer_id, :cost, :rating, :published, :published_url]   
+  #   config.list.per_page = 50
+  #   config.list.sorting = { :created_at => :desc}
+  #   
+  #   config.columns[:category_id].css_class = 'align-left'
+  # end
   
   def categories
     @page_title = 'Articles >> Categories'

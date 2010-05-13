@@ -1,7 +1,7 @@
 class CategoriesController < HomeController
-  active_scaffold :categories do |config|
-    config.columns = [:name]
-  end
+  # active_scaffold :categories do |config|
+  #   config.columns = [:name]
+  # end
   
   def list   
     @page_title = 'Categories'

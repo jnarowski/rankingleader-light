@@ -1,9 +1,9 @@
 class LinksController < HomeController
-  active_scaffold :links do |config|
-    config.columns = [:created_at, :url, :page_rank, :link_type, :anchor_text] 
-    config.list.sorting = { :created_at => :desc }   
-    config.columns[:page_rank].css_class = 'align-left'
-  end  
+  # active_scaffold :links do |config|
+  #   config.columns = [:created_at, :url, :page_rank, :link_type, :anchor_text] 
+  #   config.list.sorting = { :created_at => :desc }   
+  #   config.columns[:page_rank].css_class = 'align-left'
+  # end  
   
   def initialize_page
     super
