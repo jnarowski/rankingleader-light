@@ -28,7 +28,7 @@ Rails::Initializer.run do |config|
     
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
-  config.plugins = [ :exception_notification, :all ]
+  config.plugins = [ :all ]
   
   config.action_mailer.smtp_settings = {
       :address => "mail.metaspring.com",
